@@ -68,7 +68,9 @@ async def handle_promo_input(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
         await update.message.reply_text(
             f"🎉 Промокод активирован!\n"
-            f"Подписка продлена до {subscription_end_date}."
+            f"Подписка продлена до {subscription_end_date}.",
+            reply_markup=InlineKeyboardMarkup([
+                [InlineKeyboardButton("Мой профиль", callback_data="main_profile")]])
         )
 
         logger.info(f"Пользователь {username} (ID: {user_id}) активировал промокод {promo_code}.")

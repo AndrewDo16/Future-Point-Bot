@@ -19,8 +19,15 @@ def init_db():
 
     # Проверяем существует ли схема telegram
     cursor.execute("""
-        CREATE SCHEMA IF NOT EXISTS telegram;
-    """)
+                   SELECT schema_name
+                   FROM information_schema.schemata
+                   WHERE schema_name = 'telegram';
+                   """)
+    if not cursor.fetchone()[0]:
+        cursor.execute("""
+            CREATE SCHEMA telegram;
+        """)
+
     # Проверяем, существует ли таблица users
     cursor.execute("""
         SELECT EXISTS (
