@@ -1,0 +1,963 @@
+2025-05-06 13:22:11,568 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getMe "HTTP/1.1 200 OK"
+2025-05-06 13:22:11,666 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/deleteWebhook "HTTP/1.1 200 OK"
+2025-05-06 13:22:11,667 - INFO - Application started
+2025-05-06 13:22:16,497 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:22:16,674 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/sendMessage "HTTP/1.1 200 OK"
+2025-05-06 13:22:18,278 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:22:18,383 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-05-06 13:22:18,541 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/editMessageText "HTTP/1.1 200 OK"
+2025-05-06 13:22:21,664 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:22:21,772 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-05-06 13:22:21,900 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/editMessageText "HTTP/1.1 200 OK"
+2025-05-06 13:22:25,567 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:22:25,766 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-05-06 13:22:25,937 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/editMessageText "HTTP/1.1 200 OK"
+2025-05-06 13:22:25,938 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1298, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handlers/basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/FuturePointBot/handlers/fpClub/transaction/transactoin_handler.py", line 34, in handle_check_transaction_button
+    logger.info(f"Запрос на проверку транзакции от пользователя {update.message.from_user.id}")
+AttributeError: 'NoneType' object has no attribute 'from_user'
+2025-05-06 13:22:35,670 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:22:36,583 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:22:36,584 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 13:22:37,491 - INFO - Транзакция связана с контрактом: 0x55d398326f99059fF775485246999027B3197955
+2025-05-06 13:22:38,148 - INFO - Пополнение на целевой адрес 0x695bf46a362204b370e2914bbd5667068be8f7d0: 5.0 USDT
+2025-05-06 13:22:38,616 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/sendMessage "HTTP/1.1 200 OK"
+2025-05-06 13:22:48,317 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:22:58,455 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:23:08,546 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:23:18,730 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:23:22,416 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:23:22,875 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/sendMessage "HTTP/1.1 200 OK"
+2025-05-06 13:23:26,667 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:23:26,668 - INFO - Application is stopping. This might take a moment.
+2025-05-06 13:23:26,668 - INFO - Application.stop() complete
+2025-05-06 13:39:12,588 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getMe "HTTP/1.1 200 OK"
+2025-05-06 13:39:12,677 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/deleteWebhook "HTTP/1.1 200 OK"
+2025-05-06 13:39:12,678 - INFO - Application started
+2025-05-06 13:39:16,490 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:39:16,490 - INFO - Application is stopping. This might take a moment.
+2025-05-06 13:39:16,490 - INFO - Application.stop() complete
+2025-05-06 13:39:17,902 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getMe "HTTP/1.1 200 OK"
+2025-05-06 13:39:17,997 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/deleteWebhook "HTTP/1.1 200 OK"
+2025-05-06 13:39:17,998 - INFO - Application started
+2025-05-06 13:39:19,848 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:39:19,997 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-05-06 13:39:20,186 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/editMessageText "HTTP/1.1 200 OK"
+2025-05-06 13:39:29,982 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:39:37,584 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:39:37,584 - INFO - Application is stopping. This might take a moment.
+2025-05-06 13:39:37,584 - INFO - Application.stop() complete
+2025-05-06 13:53:19,140 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getMe "HTTP/1.1 200 OK"
+2025-05-06 13:53:19,232 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/deleteWebhook "HTTP/1.1 200 OK"
+2025-05-06 13:53:19,233 - INFO - Application started
+2025-05-06 13:53:23,122 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 13:53:23,123 - INFO - Application is stopping. This might take a moment.
+2025-05-06 13:53:23,123 - INFO - Application.stop() complete
+2025-05-06 14:00:10,109 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getMe "HTTP/1.1 200 OK"
+2025-05-06 14:00:10,206 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/deleteWebhook "HTTP/1.1 200 OK"
+2025-05-06 14:00:10,207 - INFO - Application started
+2025-05-06 14:00:13,774 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 14:00:13,774 - INFO - Application is stopping. This might take a moment.
+2025-05-06 14:00:13,774 - INFO - Application.stop() complete
+2025-05-06 15:08:11,104 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getMe "HTTP/1.1 200 OK"
+2025-05-06 15:08:11,206 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/deleteWebhook "HTTP/1.1 200 OK"
+2025-05-06 15:08:11,207 - INFO - Application started
+2025-05-06 15:08:15,267 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:08:15,460 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/sendMessage "HTTP/1.1 200 OK"
+2025-05-06 15:08:16,743 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:08:16,850 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-05-06 15:08:17,009 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/editMessageText "HTTP/1.1 200 OK"
+2025-05-06 15:08:18,772 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:08:20,941 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:08:21,044 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-05-06 15:08:21,248 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/editMessageText "HTTP/1.1 200 OK"
+2025-05-06 15:08:23,417 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:08:23,520 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/answerCallbackQuery "HTTP/1.1 200 OK"
+2025-05-06 15:08:23,638 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/editMessageText "HTTP/1.1 200 OK"
+2025-05-06 15:08:23,639 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1298, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handlers/basehandler.py", line 158, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/FuturePointBot/handlers/fpClub/transaction/transactoin_handler.py", line 34, in handle_check_transaction_button
+    logger.info(f"Запрос на проверку транзакции от пользователя {update.message.from_user.id}")
+AttributeError: 'NoneType' object has no attribute 'from_user'
+2025-05-06 15:08:29,236 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:08:29,237 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 15:08:30,208 - INFO - Транзакция связана с контрактом: 0x55d398326f99059fF775485246999027B3197955
+2025-05-06 15:08:30,851 - INFO - Пополнение на целевой адрес 0x695bf46a362204b370e2914bbd5667068be8f7d0: 5.0 USDT
+2025-05-06 15:08:31,287 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/sendMessage "HTTP/1.1 200 OK"
+2025-05-06 15:08:41,012 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:08:51,148 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:09:01,265 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:09:07,348 - INFO - HTTP Request: POST https://api.telegram.org/bot6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo/getUpdates "HTTP/1.1 200 OK"
+2025-05-06 15:09:07,349 - INFO - Application is stopping. This might take a moment.
+2025-05-06 15:09:07,349 - INFO - Application.stop() complete
+2025-05-06 16:37:17,630 - INFO - Scheduler started
+2025-05-06 16:37:17,640 - INFO - Application started
+2025-05-06 16:38:05,273 - INFO - Application is stopping. This might take a moment.
+2025-05-06 16:38:05,273 - INFO - Scheduler has been shut down
+2025-05-06 16:38:05,283 - INFO - Application.stop() complete
+2025-05-06 16:54:25,180 - INFO - Scheduler started
+2025-05-06 16:54:25,180 - INFO - Application started
+2025-05-06 16:54:46,212 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/fp_club_handler.py", line 17, in handle_fp_club
+    add_user(user_id, username)
+  File "/home/andrey/PycharmProjects/PythonProject/database.py", line 42, in add_user
+    cursor.execute('''
+sqlite3.OperationalError: no such table: users
+2025-05-06 16:55:09,886 - INFO - Application is stopping. This might take a moment.
+2025-05-06 16:55:09,886 - INFO - Scheduler has been shut down
+2025-05-06 16:55:09,896 - INFO - Application.stop() complete
+2025-05-06 16:56:18,731 - INFO - Scheduler started
+2025-05-06 16:56:18,732 - INFO - Application started
+2025-05-06 16:56:34,842 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/transaction/transactoin_handler.py", line 33, in handle_check_transaction_button
+    logger.info(f"Запрос на проверку транзакции от пользователя {update.message.from_user.id}")
+AttributeError: 'NoneType' object has no attribute 'from_user'
+2025-05-06 16:56:45,331 - INFO - Application is stopping. This might take a moment.
+2025-05-06 16:56:45,331 - INFO - Scheduler has been shut down
+2025-05-06 16:56:45,342 - INFO - Application.stop() complete
+2025-05-06 16:58:02,718 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:01:30,338 - INFO - Scheduler started
+2025-05-06 17:01:30,339 - INFO - Application started
+2025-05-06 17:01:42,645 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/transaction/transactoin_handler.py", line 35, in handle_check_transaction_button
+    logger.info(f"Запрос на проверку транзакции от пользователя {update.message.from_user.id}")
+AttributeError: 'NoneType' object has no attribute 'from_user'
+2025-05-06 17:01:52,686 - INFO - Проверяем транзакцию
+2025-05-06 17:01:52,686 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 17:01:53,208 - INFO - Подключение к BSC успешно.
+2025-05-06 17:01:53,332 - INFO - Данные транзакции получены: AttributeDict({'blockHash': HexBytes('0xce5124e694a856adc964117f5367126a439cc6d555c4d563b86743837eea5a62'), 'blockNumber': 48641969, 'from': '0xB4D864Bc09c013A1dE31Abf68F1Ac38E1c32225D', 'gas': 77994, 'gasPrice': 0, 'hash': HexBytes('0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c'), 'input': HexBytes('0xa9059cbb000000000000000000000000695bf46a362204b370e2914bbd5667068be8f7d00000000000000000000000000000000000000000000000004563918244f40000'), 'nonce': 306, 'to': '0x55d398326f99059fF775485246999027B3197955', 'transactionIndex': 22, 'value': 0, 'type': 0, 'chainId': 56, 'v': 148, 'r': HexBytes('0x5b085da0a93b45bd060396383b0c84cbeb1c57479d7c5b568f63ecb599616098'), 's': HexBytes('0xc24701d39cfffe14f87f7a4a76e187542a4c23efb6141e1ae813762dd4e261')})
+2025-05-06 17:01:53,447 - INFO - Транзакция успешно выполнена.
+2025-05-06 17:01:53,559 - ERROR - Ошибка при обработке транзакции 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c: name 'USDT_CONTRACT_ADDRESS' is not defined
+2025-05-06 17:02:46,654 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:02:46,654 - INFO - Scheduler has been shut down
+2025-05-06 17:02:46,664 - INFO - Application.stop() complete
+2025-05-06 17:02:48,063 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:02:48,558 - INFO - Scheduler started
+2025-05-06 17:02:48,558 - INFO - Application started
+2025-05-06 17:03:02,576 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/transaction/transactoin_handler.py", line 46, in handle_check_transaction_button
+    logger.info(f"Запрос на проверку транзакции от пользователя {update.message.from_user.id}")
+AttributeError: 'NoneType' object has no attribute 'from_user'
+2025-05-06 17:03:06,490 - INFO - Проверяем транзакцию
+2025-05-06 17:03:06,490 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 17:03:06,603 - INFO - Подключение к BSC успешно.
+2025-05-06 17:03:06,719 - INFO - Данные транзакции получены: AttributeDict({'blockHash': HexBytes('0xce5124e694a856adc964117f5367126a439cc6d555c4d563b86743837eea5a62'), 'blockNumber': 48641969, 'from': '0xB4D864Bc09c013A1dE31Abf68F1Ac38E1c32225D', 'gas': 77994, 'gasPrice': 0, 'hash': HexBytes('0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c'), 'input': HexBytes('0xa9059cbb000000000000000000000000695bf46a362204b370e2914bbd5667068be8f7d00000000000000000000000000000000000000000000000004563918244f40000'), 'nonce': 306, 'to': '0x55d398326f99059fF775485246999027B3197955', 'transactionIndex': 22, 'value': 0, 'type': 0, 'chainId': 56, 'v': 148, 'r': HexBytes('0x5b085da0a93b45bd060396383b0c84cbeb1c57479d7c5b568f63ecb599616098'), 's': HexBytes('0xc24701d39cfffe14f87f7a4a76e187542a4c23efb6141e1ae813762dd4e261')})
+2025-05-06 17:03:06,835 - INFO - Транзакция успешно выполнена.
+2025-05-06 17:03:06,952 - INFO - Транзакция связана с контрактом USDT.
+2025-05-06 17:03:06,952 - ERROR - Ошибка при обработке транзакции 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c: name 'bep20_abi' is not defined
+2025-05-06 17:03:34,239 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:03:34,239 - INFO - Scheduler has been shut down
+2025-05-06 17:03:34,250 - INFO - Application.stop() complete
+2025-05-06 17:03:35,625 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:03:51,945 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:03:52,468 - INFO - Scheduler started
+2025-05-06 17:03:52,468 - INFO - Application started
+2025-05-06 17:04:08,569 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 17:04:10,143 - INFO - Проверяем транзакцию
+2025-05-06 17:04:10,143 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 17:04:10,253 - INFO - Подключение к BSC успешно.
+2025-05-06 17:04:10,369 - INFO - Данные транзакции получены: AttributeDict({'blockHash': HexBytes('0xce5124e694a856adc964117f5367126a439cc6d555c4d563b86743837eea5a62'), 'blockNumber': 48641969, 'from': '0xB4D864Bc09c013A1dE31Abf68F1Ac38E1c32225D', 'gas': 77994, 'gasPrice': 0, 'hash': HexBytes('0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c'), 'input': HexBytes('0xa9059cbb000000000000000000000000695bf46a362204b370e2914bbd5667068be8f7d00000000000000000000000000000000000000000000000004563918244f40000'), 'nonce': 306, 'to': '0x55d398326f99059fF775485246999027B3197955', 'transactionIndex': 22, 'value': 0, 'type': 0, 'chainId': 56, 'v': 148, 'r': HexBytes('0x5b085da0a93b45bd060396383b0c84cbeb1c57479d7c5b568f63ecb599616098'), 's': HexBytes('0xc24701d39cfffe14f87f7a4a76e187542a4c23efb6141e1ae813762dd4e261')})
+2025-05-06 17:04:10,485 - INFO - Транзакция успешно выполнена.
+2025-05-06 17:04:10,598 - INFO - Транзакция связана с контрактом USDT.
+2025-05-06 17:04:10,931 - INFO - Расшифрованы данные транзакции: получатель=0x695bf46a362204B370e2914bbd5667068bE8f7d0, сумма=5.0.
+2025-05-06 17:05:57,673 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:05:57,674 - INFO - Scheduler has been shut down
+2025-05-06 17:05:57,684 - INFO - Application.stop() complete
+2025-05-06 17:05:59,134 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:05:59,659 - INFO - Scheduler started
+2025-05-06 17:05:59,659 - INFO - Application started
+2025-05-06 17:07:16,349 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:07:16,350 - INFO - Scheduler has been shut down
+2025-05-06 17:07:16,360 - INFO - Application.stop() complete
+2025-05-06 17:08:13,978 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:08:14,556 - INFO - Scheduler started
+2025-05-06 17:08:14,556 - INFO - Application started
+2025-05-06 17:08:18,025 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/profile/profle_handler.py", line 17, in handle_payment
+    await update.message.reply_text(profile_info)
+AttributeError: 'NoneType' object has no attribute 'reply_text'
+2025-05-06 17:08:28,420 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/profile/profle_handler.py", line 17, in handle_payment
+    await update.message.reply_text(profile_info)
+AttributeError: 'NoneType' object has no attribute 'reply_text'
+2025-05-06 17:08:38,180 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/profile/profle_handler.py", line 17, in handle_payment
+    await update.message.reply_text(profile_info)
+AttributeError: 'NoneType' object has no attribute 'reply_text'
+2025-05-06 17:09:53,702 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:09:53,703 - INFO - Scheduler has been shut down
+2025-05-06 17:09:53,713 - INFO - Application.stop() complete
+2025-05-06 17:09:57,018 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:10:02,149 - INFO - Scheduler started
+2025-05-06 17:10:02,150 - INFO - Application started
+2025-05-06 17:10:31,136 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/profile/profle_handler.py", line 17, in handle_payment
+    await update.message.reply_text(profile_info)
+AttributeError: 'NoneType' object has no attribute 'reply_text'
+2025-05-06 17:10:36,187 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:10:36,188 - INFO - Scheduler has been shut down
+2025-05-06 17:10:36,199 - INFO - Application.stop() complete
+2025-05-06 17:10:39,495 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:10:40,117 - INFO - Scheduler started
+2025-05-06 17:10:40,117 - INFO - Application started
+2025-05-06 17:18:01,132 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:18:01,132 - INFO - Scheduler has been shut down
+2025-05-06 17:18:01,142 - INFO - Application.stop() complete
+2025-05-06 17:18:34,529 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:18:35,030 - INFO - Scheduler started
+2025-05-06 17:18:35,030 - INFO - Application started
+2025-05-06 17:24:13,807 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:24:13,807 - INFO - Scheduler has been shut down
+2025-05-06 17:24:13,817 - INFO - Application.stop() complete
+2025-05-06 17:36:07,220 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:36:08,103 - INFO - Scheduler started
+2025-05-06 17:36:08,103 - INFO - Application started
+2025-05-06 17:40:40,620 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:40:40,620 - INFO - Scheduler has been shut down
+2025-05-06 17:40:40,630 - INFO - Application.stop() complete
+2025-05-06 17:41:14,363 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:41:14,924 - INFO - Scheduler started
+2025-05-06 17:41:14,924 - INFO - Application started
+2025-05-06 17:41:33,296 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 17:41:48,742 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:41:48,742 - INFO - Scheduler has been shut down
+2025-05-06 17:41:48,752 - INFO - Application.stop() complete
+2025-05-06 17:49:27,254 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:49:27,723 - INFO - Scheduler started
+2025-05-06 17:49:27,723 - INFO - Application started
+2025-05-06 17:50:47,384 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:50:47,384 - INFO - Scheduler has been shut down
+2025-05-06 17:50:47,394 - INFO - Application.stop() complete
+2025-05-06 17:50:48,796 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:50:49,382 - INFO - Scheduler started
+2025-05-06 17:50:49,383 - INFO - Application started
+2025-05-06 17:55:02,674 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:55:02,674 - INFO - Scheduler has been shut down
+2025-05-06 17:55:02,685 - INFO - Application.stop() complete
+2025-05-06 17:55:04,075 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:55:04,586 - INFO - Scheduler started
+2025-05-06 17:55:04,586 - INFO - Application started
+2025-05-06 17:56:13,170 - INFO - Application is stopping. This might take a moment.
+2025-05-06 17:56:13,170 - INFO - Scheduler has been shut down
+2025-05-06 17:56:13,180 - INFO - Application.stop() complete
+2025-05-06 17:56:14,993 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 17:56:15,786 - INFO - Scheduler started
+2025-05-06 17:56:15,786 - INFO - Application started
+2025-05-06 18:04:53,085 - INFO - Application is stopping. This might take a moment.
+2025-05-06 18:04:53,085 - INFO - Scheduler has been shut down
+2025-05-06 18:04:53,095 - INFO - Application.stop() complete
+2025-05-06 18:04:55,246 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 18:04:55,734 - INFO - Scheduler started
+2025-05-06 18:04:55,734 - INFO - Application started
+2025-05-06 18:05:03,881 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 18:05:17,968 - INFO - Проверяем транзакцию
+2025-05-06 18:05:17,968 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 18:05:17,968 - ERROR - Хэш транзакции 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c уже был использован.
+2025-05-06 18:05:34,680 - INFO - Проверяем транзакцию
+2025-05-06 18:05:34,680 - INFO - Игнорируем ввод, так как не запрашивали хэш транзакции.
+2025-05-06 18:05:47,192 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 18:05:48,851 - INFO - Проверяем транзакцию
+2025-05-06 18:05:48,851 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 18:05:48,959 - INFO - Подключение к BSC успешно.
+2025-05-06 18:05:49,077 - INFO - Данные транзакции получены: AttributeDict({'blockHash': HexBytes('0xce5124e694a856adc964117f5367126a439cc6d555c4d563b86743837eea5a62'), 'blockNumber': 48641969, 'from': '0xB4D864Bc09c013A1dE31Abf68F1Ac38E1c32225D', 'gas': 77994, 'gasPrice': 0, 'hash': HexBytes('0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c'), 'input': HexBytes('0xa9059cbb000000000000000000000000695bf46a362204b370e2914bbd5667068be8f7d00000000000000000000000000000000000000000000000004563918244f40000'), 'nonce': 306, 'to': '0x55d398326f99059fF775485246999027B3197955', 'transactionIndex': 22, 'value': 0, 'type': 0, 'chainId': 56, 'v': 148, 'r': HexBytes('0x5b085da0a93b45bd060396383b0c84cbeb1c57479d7c5b568f63ecb599616098'), 's': HexBytes('0xc24701d39cfffe14f87f7a4a76e187542a4c23efb6141e1ae813762dd4e261')})
+2025-05-06 18:05:49,190 - INFO - Транзакция успешно выполнена.
+2025-05-06 18:05:49,301 - INFO - Транзакция связана с контрактом USDT.
+2025-05-06 18:05:49,637 - INFO - Расшифрованы данные транзакции: получатель=0x695bf46a362204B370e2914bbd5667068bE8f7d0, сумма=5.0.
+2025-05-06 18:05:49,637 - ERROR - Транзакция 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c проведена на сумму 5.0.
+2025-05-06 18:12:07,864 - INFO - Application is stopping. This might take a moment.
+2025-05-06 18:12:07,864 - INFO - Scheduler has been shut down
+2025-05-06 18:12:07,875 - INFO - Application.stop() complete
+2025-05-06 18:12:09,401 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 18:12:09,516 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-05-06 18:12:09,517 - INFO - Added job "check_subscriptions" to job store "default"
+2025-05-06 18:12:09,517 - INFO - Scheduler started
+2025-05-06 18:12:09,926 - INFO - Scheduler started
+2025-05-06 18:12:09,926 - INFO - Application started
+2025-05-06 18:16:08,948 - INFO - Application is stopping. This might take a moment.
+2025-05-06 18:16:08,948 - INFO - Scheduler has been shut down
+2025-05-06 18:16:08,958 - INFO - Application.stop() complete
+2025-05-06 18:24:46,626 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 18:24:46,733 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-05-06 18:24:46,733 - INFO - Added job "check_subscriptions" to job store "default"
+2025-05-06 18:24:46,733 - INFO - Scheduler started
+2025-05-06 18:24:47,155 - INFO - Scheduler started
+2025-05-06 18:24:47,155 - INFO - Application started
+2025-05-06 18:25:06,304 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/fp_club_handler.py", line 20, in handle_fp_club
+    subscription_status, end_date = get_subscription_status(user_id)
+  File "/home/andrey/PycharmProjects/PythonProject/database.py", line 66, in get_subscription_status
+    cursor.execute('''
+sqlite3.OperationalError: no such column: reminder_sent
+2025-05-06 18:26:39,241 - INFO - Application is stopping. This might take a moment.
+2025-05-06 18:26:39,241 - INFO - Scheduler has been shut down
+2025-05-06 18:26:39,252 - INFO - Application.stop() complete
+2025-05-06 18:27:00,824 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 18:27:00,927 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-05-06 18:27:00,928 - INFO - Added job "check_subscriptions" to job store "default"
+2025-05-06 18:27:00,928 - INFO - Scheduler started
+2025-05-06 18:27:01,338 - INFO - Scheduler started
+2025-05-06 18:27:01,338 - INFO - Application started
+2025-05-06 18:27:12,907 - INFO - Application is stopping. This might take a moment.
+2025-05-06 18:27:12,907 - INFO - Scheduler has been shut down
+2025-05-06 18:27:12,917 - INFO - Application.stop() complete
+2025-05-06 18:27:14,204 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 18:27:14,321 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-05-06 18:27:14,321 - INFO - Added job "check_subscriptions" to job store "default"
+2025-05-06 18:27:14,321 - INFO - Scheduler started
+2025-05-06 18:27:14,697 - INFO - Scheduler started
+2025-05-06 18:27:14,697 - INFO - Application started
+2025-05-06 18:27:26,655 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/fp_club_handler.py", line 20, in handle_fp_club
+    subscription_status, end_date = get_subscription_status(user_id)
+ValueError: too many values to unpack (expected 2)
+2025-05-06 18:27:31,602 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/fp_club_handler.py", line 20, in handle_fp_club
+    subscription_status, end_date = get_subscription_status(user_id)
+ValueError: too many values to unpack (expected 2)
+2025-05-06 18:27:44,507 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_application.py", line 1002, in process_update
+    await coroutine
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_handler.py", line 137, in handle_update
+    return await self.callback(update, context)
+  File "/home/andrey/PycharmProjects/PythonProject/handlers/fpClub/fp_club_handler.py", line 20, in handle_fp_club
+    subscription_status, end_date = get_subscription_status(user_id)
+ValueError: too many values to unpack (expected 2)
+2025-05-06 18:30:07,627 - INFO - Application is stopping. This might take a moment.
+2025-05-06 18:30:07,627 - INFO - Scheduler has been shut down
+2025-05-06 18:30:07,637 - INFO - Application.stop() complete
+2025-05-06 18:30:09,095 - INFO - Подключение к Binance Smart Chain успешно.
+2025-05-06 18:30:09,206 - INFO - Adding job tentatively -- it will be properly scheduled when the scheduler starts
+2025-05-06 18:30:09,206 - INFO - Added job "check_subscriptions" to job store "default"
+2025-05-06 18:30:09,206 - INFO - Scheduler started
+2025-05-06 18:30:09,618 - INFO - Scheduler started
+2025-05-06 18:30:09,618 - INFO - Application started
+2025-05-06 18:30:21,711 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 18:30:32,112 - INFO - Проверяем транзакцию
+2025-05-06 18:30:32,112 - INFO - Получен хэш транзакции от пользователя 419409104: 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c
+2025-05-06 18:30:32,222 - INFO - Подключение к BSC успешно.
+2025-05-06 18:30:32,351 - INFO - Данные транзакции получены: AttributeDict({'blockHash': HexBytes('0xce5124e694a856adc964117f5367126a439cc6d555c4d563b86743837eea5a62'), 'blockNumber': 48641969, 'from': '0xB4D864Bc09c013A1dE31Abf68F1Ac38E1c32225D', 'gas': 77994, 'gasPrice': 0, 'hash': HexBytes('0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c'), 'input': HexBytes('0xa9059cbb000000000000000000000000695bf46a362204b370e2914bbd5667068be8f7d00000000000000000000000000000000000000000000000004563918244f40000'), 'nonce': 306, 'to': '0x55d398326f99059fF775485246999027B3197955', 'transactionIndex': 22, 'value': 0, 'type': 0, 'chainId': 56, 'v': 148, 'r': HexBytes('0x5b085da0a93b45bd060396383b0c84cbeb1c57479d7c5b568f63ecb599616098'), 's': HexBytes('0xc24701d39cfffe14f87f7a4a76e187542a4c23efb6141e1ae813762dd4e261')})
+2025-05-06 18:30:32,465 - INFO - Транзакция успешно выполнена.
+2025-05-06 18:30:32,580 - INFO - Транзакция связана с контрактом USDT.
+2025-05-06 18:30:32,915 - INFO - Расшифрованы данные транзакции: получатель=0x695bf46a362204B370e2914bbd5667068bE8f7d0, сумма=5.0.
+2025-05-06 18:30:32,915 - ERROR - Транзакция 0xffa9384c6074e1da7b9fa43c30f3ae8b49930ab60a04dd76ce14fe3163d15d1c проведена на сумму 5.0.
+2025-05-06 18:32:28,568 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 18:32:41,870 - INFO - Проверяем транзакцию
+2025-05-06 18:32:41,870 - INFO - Получен хэш транзакции от пользователя 419409104: Получить доступ
+2025-05-06 18:32:42,422 - INFO - Подключение к BSC успешно.
+2025-05-06 18:32:42,423 - ERROR - Ошибка при обработке транзакции Получить доступ: when sending a str, it must be a hex string. Got: 'Получить доступ'
+2025-05-06 18:32:50,780 - INFO - Проверяем транзакцию
+2025-05-06 18:32:50,781 - INFO - Игнорируем ввод, так как не запрашивали хэш транзакции.
+2025-05-06 18:33:00,962 - INFO - Проверяем транзакцию
+2025-05-06 18:33:00,962 - INFO - Игнорируем ввод, так как не запрашивали хэш транзакции.
+2025-05-06 18:34:01,546 - INFO - Проверяем транзакцию
+2025-05-06 18:34:01,546 - INFO - Игнорируем ввод, так как не запрашивали хэш транзакции.
+2025-05-06 18:34:02,467 - INFO - Проверяем транзакцию
+2025-05-06 18:34:02,467 - INFO - Игнорируем ввод, так как не запрашивали хэш транзакции.
+2025-05-06 18:34:02,582 - INFO - Проверяем транзакцию
+2025-05-06 18:34:02,582 - INFO - Игнорируем ввод, так как не запрашивали хэш транзакции.
+2025-05-06 18:34:11,990 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 18:34:14,857 - INFO - Проверяем транзакцию
+2025-05-06 18:34:14,858 - INFO - Получен хэш транзакции от пользователя 419409104: Слбаба
+2025-05-06 18:34:15,350 - INFO - Подключение к BSC успешно.
+2025-05-06 18:34:15,351 - ERROR - Ошибка при обработке транзакции Слбаба: when sending a str, it must be a hex string. Got: 'Слбаба'
+2025-05-06 18:37:59,392 - INFO - Запрос на проверку транзакции от пользователя 419409104
+2025-05-06 18:38:02,924 - INFO - Проверяем транзакцию
+2025-05-06 18:38:02,924 - INFO - Получен хэш транзакции от пользователя 419409104: 0x695bf46a362204B370e2914bbd5667068bE8f7d0
+2025-05-06 18:38:03,459 - INFO - Подключение к BSC успешно.
+2025-05-06 18:38:03,574 - ERROR - Ошибка при обработке транзакции 0x695bf46a362204B370e2914bbd5667068bE8f7d0: Transaction with hash: '0x695bf46a362204b370e2914bbd5667068be8f7d0000000000000000000000000' not found.
+2025-05-06 19:44:24,630 - ERROR - Error while getting Updates: httpx HTTPError: [Errno -3] Temporary failure in name resolution
+2025-05-06 19:44:24,644 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 208, in connect_tcp
+    gai_res = await getaddrinfo(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 584, in getaddrinfo
+    gai_res = await get_async_backend().getaddrinfo(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2692, in getaddrinfo
+    return await get_running_loop().getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 863, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 174, in do_request
+    res = await self._client.request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 573, in _network_loop_retry
+    if not await action_cb():
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 318, in polling_action_cb
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 303, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 480, in get_updates
+    updates = await super().get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 242, in decorator
+    result = await func(*args, **kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 3892, in get_updates
+    await self._post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 303, in _post
+    return await self._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 281, in _do_post
+    return await super()._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 334, in _do_post
+    return await request.post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 162, in post
+    result = await self._request_wrapper(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 285, in _request_wrapper
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 271, in _request_wrapper
+    code, payload = await self.do_request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 195, in do_request
+    raise NetworkError(f"httpx HTTPError: {err}") from err
+telegram.error.NetworkError: httpx HTTPError: [Errno -3] Temporary failure in name resolution
+2025-05-06 19:44:25,646 - ERROR - Error while getting Updates: httpx HTTPError: [Errno -3] Temporary failure in name resolution
+2025-05-06 19:44:25,646 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 208, in connect_tcp
+    gai_res = await getaddrinfo(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 584, in getaddrinfo
+    gai_res = await get_async_backend().getaddrinfo(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2692, in getaddrinfo
+    return await get_running_loop().getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 863, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 174, in do_request
+    res = await self._client.request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 573, in _network_loop_retry
+    if not await action_cb():
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 318, in polling_action_cb
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 303, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 480, in get_updates
+    updates = await super().get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 242, in decorator
+    result = await func(*args, **kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 3892, in get_updates
+    await self._post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 303, in _post
+    return await self._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 281, in _do_post
+    return await super()._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 334, in _do_post
+    return await request.post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 162, in post
+    result = await self._request_wrapper(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 285, in _request_wrapper
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 271, in _request_wrapper
+    code, payload = await self.do_request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 195, in do_request
+    raise NetworkError(f"httpx HTTPError: {err}") from err
+telegram.error.NetworkError: httpx HTTPError: [Errno -3] Temporary failure in name resolution
+2025-05-06 19:44:27,149 - ERROR - Error while getting Updates: httpx HTTPError: [Errno -3] Temporary failure in name resolution
+2025-05-06 19:44:27,150 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 10, in map_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/asyncio.py", line 111, in connect_tcp
+    stream: anyio.abc.ByteStream = await anyio.connect_tcp(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 208, in connect_tcp
+    gai_res = await getaddrinfo(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_core/_sockets.py", line 584, in getaddrinfo
+    gai_res = await get_async_backend().getaddrinfo(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2692, in getaddrinfo
+    return await get_running_loop().getaddrinfo(
+  File "/usr/lib/python3.10/asyncio/base_events.py", line 863, in getaddrinfo
+    return await self.run_in_executor(
+  File "/usr/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/usr/lib/python3.10/socket.py", line 955, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 86, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 63, in handle_async_request
+    stream = await self._connect(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 111, in _connect
+    stream = await self._network_backend.connect_tcp(**kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/auto.py", line 29, in connect_tcp
+    return await self._backend.connect_tcp(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/backends/asyncio.py", line 109, in connect_tcp
+    with map_exceptions(exc_map):
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_exceptions.py", line 14, in map_exceptions
+    raise to_exc(exc)
+httpcore.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 174, in do_request
+    res = await self._client.request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.ConnectError: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 573, in _network_loop_retry
+    if not await action_cb():
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 318, in polling_action_cb
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 303, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 480, in get_updates
+    updates = await super().get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 242, in decorator
+    result = await func(*args, **kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 3892, in get_updates
+    await self._post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 303, in _post
+    return await self._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 281, in _do_post
+    return await super()._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 334, in _do_post
+    return await request.post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 162, in post
+    result = await self._request_wrapper(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 285, in _request_wrapper
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 271, in _request_wrapper
+    code, payload = await self.do_request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 195, in do_request
+    raise NetworkError(f"httpx HTTPError: {err}") from err
+telegram.error.NetworkError: httpx HTTPError: [Errno -3] Temporary failure in name resolution
+2025-05-06 20:10:11,538 - ERROR - Error while getting Updates: httpx HTTPError: Server disconnected without sending a response.
+2025-05-06 20:10:11,540 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 90, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 112, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 91, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 155, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 174, in do_request
+    res = await self._client.request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 573, in _network_loop_retry
+    if not await action_cb():
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 318, in polling_action_cb
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 303, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 480, in get_updates
+    updates = await super().get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 242, in decorator
+    result = await func(*args, **kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 3892, in get_updates
+    await self._post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 303, in _post
+    return await self._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 281, in _do_post
+    return await super()._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 334, in _do_post
+    return await request.post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 162, in post
+    result = await self._request_wrapper(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 285, in _request_wrapper
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 271, in _request_wrapper
+    code, payload = await self.do_request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 195, in do_request
+    raise NetworkError(f"httpx HTTPError: {err}") from err
+telegram.error.NetworkError: httpx HTTPError: Server disconnected without sending a response.
+2025-05-07 13:11:11,484 - ERROR - Error while getting Updates: httpx HTTPError: Server disconnected without sending a response.
+2025-05-07 13:11:11,493 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 90, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 112, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 91, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 155, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 174, in do_request
+    res = await self._client.request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 573, in _network_loop_retry
+    if not await action_cb():
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 318, in polling_action_cb
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 303, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 480, in get_updates
+    updates = await super().get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 242, in decorator
+    result = await func(*args, **kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 3892, in get_updates
+    await self._post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 303, in _post
+    return await self._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 281, in _do_post
+    return await super()._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 334, in _do_post
+    return await request.post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 162, in post
+    result = await self._request_wrapper(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 285, in _request_wrapper
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 271, in _request_wrapper
+    code, payload = await self.do_request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 195, in do_request
+    raise NetworkError(f"httpx HTTPError: {err}") from err
+telegram.error.NetworkError: httpx HTTPError: Server disconnected without sending a response.
+2025-05-08 10:45:03,516 - ERROR - Error while getting Updates: httpx HTTPError: Server disconnected without sending a response.
+2025-05-08 10:45:03,525 - ERROR - No error handlers are registered, logging exception.
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 60, in map_httpcore_exceptions
+    yield
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 353, in handle_async_request
+    resp = await self._pool.handle_async_request(req)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 253, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection_pool.py", line 237, in handle_async_request
+    response = await connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/connection.py", line 90, in handle_async_request
+    return await self._connection.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 112, in handle_async_request
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 91, in handle_async_request
+    ) = await self._receive_response_headers(**kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 155, in _receive_response_headers
+    event = await self._receive_event(timeout=timeout)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpcore/_async/http11.py", line 205, in _receive_event
+    raise RemoteProtocolError(msg)
+httpcore.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 174, in do_request
+    res = await self._client.request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1533, in request
+    return await self.send(request, auth=auth, follow_redirects=follow_redirects)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1620, in send
+    response = await self._send_handling_auth(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1648, in _send_handling_auth
+    response = await self._send_handling_redirects(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1685, in _send_handling_redirects
+    response = await self._send_single_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_client.py", line 1722, in _send_single_request
+    response = await transport.handle_async_request(request)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 352, in handle_async_request
+    with map_httpcore_exceptions():
+  File "/usr/lib/python3.10/contextlib.py", line 153, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/httpx/_transports/default.py", line 77, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx.RemoteProtocolError: Server disconnected without sending a response.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 573, in _network_loop_retry
+    if not await action_cb():
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 318, in polling_action_cb
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_updater.py", line 303, in polling_action_cb
+    updates = await self.bot.get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 480, in get_updates
+    updates = await super().get_updates(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 242, in decorator
+    result = await func(*args, **kwargs)
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 3892, in get_updates
+    await self._post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 303, in _post
+    return await self._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/ext/_extbot.py", line 281, in _do_post
+    return await super()._do_post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/_bot.py", line 334, in _do_post
+    return await request.post(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 162, in post
+    result = await self._request_wrapper(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 285, in _request_wrapper
+    raise exc
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_baserequest.py", line 271, in _request_wrapper
+    code, payload = await self.do_request(
+  File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 195, in do_request
+    raise NetworkError(f"httpx HTTPError: {err}") from err
+telegram.error.NetworkError: httpx HTTPError: Server disconnected without sending a response.
