@@ -17,6 +17,17 @@ def init_db():
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
 
+    # Проверяем существует ли схема telegram
+    cursor.execute("""
+                   SELECT schema_name
+                   FROM information_schema.schemata
+                   WHERE schema_name = 'telegram';
+                   """)
+    if not cursor.fetchone()[0]:
+        cursor.execute("""
+            CREATE SCHEMA telegram;
+        """)
+
     # Проверяем, существует ли таблица users
     cursor.execute("""
         SELECT EXISTS (
@@ -27,7 +38,7 @@ def init_db():
     if not cursor.fetchone()[0]:
         # Если таблица не существует, создаем её
         cursor.execute("""
-            CREATE TABLE users (
+            CREATE TABLE telegram.users (
                 user_id BIGINT PRIMARY KEY,
                 username TEXT,
                 subscription_status TEXT DEFAULT 'inactive',
@@ -46,7 +57,7 @@ def init_db():
     if not cursor.fetchone()[0]:
         # Если таблица не существует, создаем её
         cursor.execute("""
-            CREATE TABLE transactions (
+            CREATE TABLE telegram.transactions (
                 tx_hash TEXT PRIMARY KEY,
                 user_id BIGINT,
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -64,7 +75,7 @@ def init_db():
     if not cursor.fetchone()[0]:
         # Если таблица не существует, создаем её
         cursor.execute("""
-            CREATE TABLE promo_codes (
+            CREATE TABLE telegram.promo_codes (
             code TEXT PRIMARY KEY,
             days INTEGER NOT NULL,
             used BOOLEAN DEFAULT FALSE,
@@ -80,7 +91,7 @@ def add_user(user_id, username):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        INSERT INTO users (user_id, username)
+        INSERT INTO telegram.users (user_id, username)
         VALUES (%s, %s)
         ON CONFLICT (user_id) DO NOTHING;
     """, (user_id, username))
@@ -92,7 +103,7 @@ def update_subscription(user_id, status, end_date):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        UPDATE users
+        UPDATE telegram.users
         SET subscription_status = %s, subscription_end_date = %s, reminder_sent = FALSE
         WHERE user_id = %s;
     """, (status, end_date, user_id))
@@ -105,7 +116,7 @@ def get_active_users():
     cursor = conn.cursor()
     cursor.execute("""
         SELECT user_id, subscription_end_date
-        FROM users
+        FROM telegram.users
         WHERE subscription_status = 'active';
     """)
     users = cursor.fetchall()
@@ -118,7 +129,7 @@ def get_subscription_status(user_id):
     cursor = conn.cursor()
     cursor.execute("""
         SELECT subscription_status, subscription_end_date, reminder_sent
-        FROM users
+        FROM telegram.users
         WHERE user_id = %s;
     """, (user_id,))
     result = cursor.fetchone()
@@ -135,7 +146,7 @@ def is_transaction_used(tx_hash):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT tx_hash FROM transactions WHERE tx_hash = %s;
+        SELECT tx_hash FROM telegram.transactions WHERE tx_hash = %s;
     """, (tx_hash,))
     result = cursor.fetchone()
     conn.close()
@@ -146,7 +157,7 @@ def save_transaction(tx_hash, user_id):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        INSERT INTO transactions (tx_hash, user_id)
+        INSERT INTO telegram.transactions (tx_hash, user_id)
         VALUES (%s, %s)
         ON CONFLICT (tx_hash) DO NOTHING;
     """, (tx_hash, user_id))
@@ -158,7 +169,7 @@ def set_reminder_sent(user_id, sent=True):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        UPDATE users
+        UPDATE telegram.users
         SET reminder_sent = %s
         WHERE user_id = %s;
     """, (sent, user_id))
@@ -171,7 +182,7 @@ def check_promo_code(code):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT days, used FROM promo_codes WHERE code = %s;
+        SELECT days, used FROM telegram.promo_codes WHERE code = %s;
     """, (code,))
     result = cursor.fetchone()
     conn.close()
@@ -182,7 +193,7 @@ def mark_promo_code_as_used(code, user_id):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        UPDATE promo_codes
+        UPDATE telegram.promo_codes
         SET used = TRUE, used_by = %s
         WHERE code = %s;
     """, (user_id, code))
@@ -194,7 +205,7 @@ def update_subscription_with_promo(user_id, days_to_add):
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT subscription_status, subscription_end_date FROM users WHERE user_id = %s;
+        SELECT subscription_status, subscription_end_date FROM telegram.users WHERE user_id = %s;
     """, (user_id,))
     result = cursor.fetchone()
 
@@ -218,7 +229,7 @@ def update_subscription_with_promo(user_id, days_to_add):
 
         # Обновляем статус подписки
         cursor.execute("""
-            UPDATE users
+            UPDATE telegram.users
             SET subscription_status = 'active', subscription_end_date = %s
             WHERE user_id = %s;
         """, (new_end_date, user_id))
