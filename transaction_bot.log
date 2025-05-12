@@ -961,3 +961,4 @@ Traceback (most recent call last):
   File "/home/andrey/PycharmProjects/PythonProject/.venv/lib/python3.10/site-packages/telegram/request/_httpxrequest.py", line 195, in do_request
     raise NetworkError(f"httpx HTTPError: {err}") from err
 telegram.error.NetworkError: httpx HTTPError: Server disconnected without sending a response.
+2025-05-12 16:54:54,670 - INFO - Подключение к Binance Smart Chain успешно.
