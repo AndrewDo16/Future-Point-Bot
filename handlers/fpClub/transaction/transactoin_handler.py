@@ -1,9 +1,10 @@
 import logging
-from telegram import Update
-from telegram.ext import ContextTypes, CallbackQueryHandler, MessageHandler, filters
+from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
+from telegram.ext import ContextTypes, CallbackQueryHandler
 from web3 import Web3
 from datetime import datetime, timedelta
 from database import update_subscription, is_transaction_used, save_transaction, get_subscription_status
+from keyboards.payment.payment_error_keyboard import get_payment_error_keyboard
 
 # Настройка логирования
 logging.basicConfig(
@@ -28,9 +29,6 @@ else:
 
 # Целевой адрес для проверки пополнений
 TARGET_ADDRESS = "0x695bf46a362204B370e2914bbd5667068bE8f7d0".lower()
-
-# Требуемая сумма оплаты (в USDT)
-REQUIRED_AMOUNT = 5  # 30 USDT
 
 # Адрес контракта USDT на BSC
 USDT_CONTRACT_ADDRESS = "0x55d398326f99059fF775485246999027B3197955"
@@ -96,7 +94,8 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
     tx_hash = update.message.text.strip()
     context.user_data["waiting_for_tx"] = False  # Сбросим флаг
 
-    total_amount = context.user_data["total_price"]
+    # total_amount = context.user_data["total_price"]
+    total_amount = 5 # для проверки
     total_days = context.user_data["total_days"]
 
     # Получаем пользователя из текстового сообщения
@@ -107,13 +106,13 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         # Проверяем, был ли хэш уже использован
         if is_transaction_used(tx_hash):
             logger.error(f"Хэш транзакции {tx_hash} уже был использован.")
-            await update.message.reply_text("❌ Ошибка: Этот хэш транзакции уже был использован.")
+            await update.message.reply_text("❌ Ошибка: Этот хэш транзакции уже был использован.", reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
         # Проверяем, существует ли транзакция
         if not web3.is_connected():
             logger.error("Не удалось подключиться к Binance Smart Chain.")
-            await update.message.reply_text("❌ Ошибка: Не удалось подключиться к сети BSC.")
+            await update.message.reply_text("❌ Ошибка: Не удалось подключиться к сети BSC.", reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
         logger.info("Подключение к BSC успешно.")
@@ -122,7 +121,7 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         transaction = web3.eth.get_transaction(tx_hash)
         if not transaction:
             logger.error(f"Транзакция {tx_hash} не найдена.")
-            await update.message.reply_text("❌ Ошибка: Транзакция не найдена.")
+            await update.message.reply_text("❌ Ошибка: Транзакция не найдена.", reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
         logger.info(f"Данные транзакции получены: {transaction}")
@@ -130,7 +129,7 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         receipt = web3.eth.get_transaction_receipt(tx_hash)
         if receipt['status'] != 1:
             logger.error(f"Транзакция {tx_hash} завершилась с ошибкой.")
-            await update.message.reply_text("❌ Ошибка: Транзакция завершилась с ошибкой.")
+            await update.message.reply_text("❌ Ошибка: Транзакция завершилась с ошибкой.", reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
         logger.info("Транзакция успешно выполнена.")
@@ -139,7 +138,7 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         is_contract = web3.eth.get_code(transaction['to']) != b''
         if not is_contract or transaction['to'].lower() != USDT_CONTRACT_ADDRESS.lower():
             logger.error(f"Транзакция {tx_hash} не связана с контрактом USDT.")
-            await update.message.reply_text("❌ Ошибка: Транзакция не связана с контрактом USDT.")
+            await update.message.reply_text("❌ Ошибка: Транзакция не связана с контрактом USDT.", reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
         logger.info("Транзакция связана с контрактом USDT.")
@@ -158,16 +157,17 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         # Проверка адреса получателя и суммы
         if recipient.lower() != TARGET_ADDRESS:
             logger.error(f"Транзакция {tx_hash} проведена не на указанный кошелек {recipient}.")
-            await update.message.reply_text("❌ Ошибка: Транзакция не соответствует требованиям. Указанный получатель не соответствует нашему кошельку. В случае возникновения вопросов обратитесь к НАМ (тут укажем почту или логин в тг)")
+            await update.message.reply_text(
+                "❌ Ошибка: Транзакция не соответствует требованиям. Указанный получатель не соответствует нашему кошельку. В случае возникновения вопросов обратитесь к НАМ (тут укажем почту или логин в тг)",
+                reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
         if amount_in_tokens < total_amount:
             logger.error(f"Транзакция {tx_hash} проведена на сумму {amount_in_tokens}.")
-            await update.message.reply_text(f"❌ Ошибка: Транзакция не соответствует требованиям. Переведенная сумма не соответствует тарифному плану. В рамках транзакции была переведена сумма {amount_in_tokens}. В случае возникновения вопросов обратитесь к НАМ (тут укажем почту или логин в тг)")
+            await update.message.reply_text(
+                f"❌ Ошибка: Транзакция не соответствует требованиям. Переведенная сумма не соответствует тарифному плану. В рамках транзакции была переведена сумма {amount_in_tokens}. В случае возникновения вопросов обратитесь к НАМ (тут укажем почту или логин в тг)",
+                reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
-
-        # Сохраняем успешную транзакцию в базу данных
-        save_transaction(tx_hash, user.id)
 
         # Получаем текущий статус подписки и дату окончания
         subscription_status, subscription_end_date, _ = get_subscription_status(user.id)
@@ -189,14 +189,17 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
             f"📦 Получатель: `{recipient}`\n"
             f"🪙 Токен: USDT\n"
             f"💰 Сумма: `{amount_in_tokens:.6f} USDT`\n"
-            f"🎉 Подписка активирована до {end_date}"
+            f"🎉 Подписка активирована до {new_end_date}"
         )
-        await update.message.reply_text(reply, parse_mode="Markdown")
+
+        # Сохраняем успешную транзакцию в базу данных
+        save_transaction(tx_hash, user.id)
+
+        await update.message.reply_text(reply, parse_mode="Markdown", reply_markup=InlineKeyboardMarkup([
+            [InlineKeyboardButton("Мой профиль", callback_data="main_profile")]])
+                                        )
 
     except Exception as e:
         logger.error(f"Ошибка при обработке транзакции {tx_hash}: {str(e)}")
-        await update.message.reply_text(f"❌ Ошибка при обработке транзакции: {str(e)}")
+        await update.message.reply_text(f"❌ Ошибка при обработке транзакции: {str(e)}", reply_markup=get_payment_error_keyboard(total_amount, total_days))
 
-
-
-transaction_input_handler = MessageHandler(filters.TEXT & ~filters.COMMAND, handle_transaction_input)

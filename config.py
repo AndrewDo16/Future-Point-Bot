@@ -1,2 +1,4 @@
-# Токен вашего бота (полученный от BotFather)
-TOKEN = "6508924283:AAF7xAsLaA75dvHBJEs5SQLoifVPl4eBmLo"
+# import os
+#
+# # Токен бота берется из переменной окружения
+# TOKEN = os.getenv("BOT_TOKEN")

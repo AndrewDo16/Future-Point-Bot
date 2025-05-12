@@ -1,36 +1,50 @@
-from datetime import datetime, timedelta
-from telegram import Bot
-from database import get_all_users, get_subscription_status, set_reminder_sent
+from datetime import datetime
+
+from telegram import Bot, InlineKeyboardMarkup, InlineKeyboardButton
+
+from database import update_subscription, get_active_users
+
+PAYMENT_BUTTON = InlineKeyboardMarkup([
+                [InlineKeyboardButton("Продлить", callback_data="choose_payment")]
+            ])
 
 # Функция для проверки подписок
 async def check_subscriptions(bot_token):
     bot = Bot(token=bot_token)
     today = datetime.now().date()
 
-    # Получаем всех пользователей из базы данных
-    users = get_all_users()
+    # Получаем всех активных пользователей из базы данных
+    active_users = get_active_users()
 
-    for user in users:
-        user_id = user[0]
-        subscription_status, subscription_end_date, reminder_sent = get_subscription_status(user_id)
+    for user in active_users:
+        user_id, subscription_end_date = user
 
-        if subscription_status == "active" and subscription_end_date:
+        # Преобразуем дату окончания подписки в объект date
+        if isinstance(subscription_end_date, str):
             end_date = datetime.strptime(subscription_end_date, "%Y-%m-%d").date()
-            days_left = (end_date - today).days
+        else:
+            end_date = subscription_end_date
 
-            # Если до конца подписки осталось 7 дней или меньше
-            if 0 < days_left <= 7:
-                if not reminder_sent:
-                    # Отправляем напоминание
-                    message = f"⚠️ У вас осталось {days_left} дней до окончания подписки. Пожалуйста, продлите её!"
-                    await bot.send_message(chat_id=user_id, text=message)
+        # Вычисляем количество оставшихся дней
+        days_left = (end_date - today).days
 
-                    # Обновляем флаг напоминания
-                    set_reminder_sent(user_id, True)
-            elif days_left <= 0:
-                # Подписка истекла
-                message = "❌ Ваша подписка истекла. Пожалуйста, продлите её, чтобы продолжить использование."
-                await bot.send_message(chat_id=user_id, text=message)
-            else:
-                # Сбрасываем флаг напоминания, если подписка ещё активна и больше 7 дней
-                set_reminder_sent(user_id, False)
+        # Если до конца подписки осталось 7 дней или меньше
+        if 0 < days_left <= 7:
+            # Отправляем напоминание
+            message = f"⚠️ У вас осталось {days_left} дней до окончания подписки. Пожалуйста, продлите её!"
+            await bot.send_message(chat_id=user_id, text=message, reply_markup=PAYMENT_BUTTON)
+
+        if days_left == 0:
+            # Отправляем напоминание
+            message = f"⚠️ Сегодня заканчивается подписка. Пожалуйста, продлите её!"
+            await bot.send_message(chat_id=user_id, text=message, reply_markup=PAYMENT_BUTTON)
+
+
+        # Если подписка истекла
+        elif days_left < 0:
+            # Отправляем сообщение о том, что подписка истекла
+            message = "❌ Ваша подписка истекла. Пожалуйста, продлите её, чтобы продолжить использование."
+            await bot.send_message(chat_id=user_id, text=message, reply_markup=PAYMENT_BUTTON)
+
+            # Меняем статус подписки на inactive
+            update_subscription(user_id, "inactive", None)

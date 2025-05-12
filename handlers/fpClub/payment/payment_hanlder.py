@@ -1,7 +1,8 @@
 from telegram import Update
 from telegram.ext import CallbackQueryHandler, ContextTypes
-from texts.payment_texts import PAYMENT_TEXT
+
 from keyboards.payment_keyboard import get_payment_keyboard
+
 
 async def handle_payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     query = update.callback_query
@@ -14,7 +15,7 @@ async def handle_payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     # Вычисляем стоимость на основе переданного значения
     base_price = 30  # Базовая стоимость (30 USDT)
     total_price = base_price * value  # Умножаем базовую стоимость на значение
-    total_days = value * 10 # Умножаем на 10 что бы получить кол-во дней
+    total_days = value * 30 # Умножаем на 30, чтобы получить кол-во дней
 
     # Формируем динамический текст с учетом стоимости
     payment_text = (
