@@ -12,7 +12,6 @@ logging.basicConfig(
     level=logging.INFO,
     handlers=[
         logging.StreamHandler(),  # Вывод логов в консоль
-        logging.FileHandler("transaction_bot.log", mode="a")  # Запись в файл
     ]
 )
 logger = logging.getLogger()
@@ -94,8 +93,7 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
     tx_hash = update.message.text.strip()
     context.user_data["waiting_for_tx"] = False  # Сбросим флаг
 
-    # total_amount = context.user_data["total_price"]
-    total_amount = 5 # для проверки
+    total_amount = context.user_data["total_price"]
     total_days = context.user_data["total_days"]
 
     # Получаем пользователя из текстового сообщения
