@@ -99,6 +99,24 @@ def init_db():
                        );
                        """)
 
+
+    # Проверяем, существует ли таблица price
+    cursor.execute("""
+                   SELECT EXISTS (SELECT
+                                  FROM information_schema.tables
+                                  WHERE table_name = 'price');
+                   """)
+    if not cursor.fetchone()[0]:
+        cursor.execute("""
+                       CREATE TABLE telegram.price
+                       (
+                           price    BIGINT      NOT NULL,
+                           currency TEXT        NOT NULL
+                       );
+                           
+                       INSERT INTO telegram.price VALUES (30, 'USDT')
+                       """)
+
     conn.commit()
     conn.close()
 
@@ -284,3 +302,13 @@ def get_all_group():
     all_groups = [row[0] for row in cursor.fetchall()]
     conn.close()
     return all_groups
+
+def get_price():
+    conn = psycopg2.connect(**DB_CONFIG)
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT price FROM telegram.price
+    """)
+    result = cursor.fetchone()
+    conn.close()
+    return result[0] if result else None
