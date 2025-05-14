@@ -9,7 +9,7 @@ async def handle_choose_payment(update: Update, context: ContextTypes.DEFAULT_TY
     await query.answer()
 
     await query.edit_message_text(
-        text="Выберите удобный способ оплаты",
+        text="💳 Выберите удобный для вас способ оплаты — и продолжим без задержек!",
         reply_markup=get_fp_club_choose_payment_keyboard()
     )
 

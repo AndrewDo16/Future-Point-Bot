@@ -83,6 +83,22 @@ def init_db():
             );
         """)
 
+    # Проверяем, существует ли таблица groups
+    cursor.execute("""
+                   SELECT EXISTS (SELECT
+                                  FROM information_schema.tables
+                                  WHERE table_name = 'groups');
+                   """)
+    if not cursor.fetchone()[0]:
+        cursor.execute("""
+                       CREATE TABLE telegram.groups
+                       (
+                           group_id   SERIAL PRIMARY KEY,
+                           group_name TEXT UNIQUE NOT NULL,
+                           chat_id    BIGINT      NOT NULL
+                       );
+                       """)
+
     conn.commit()
     conn.close()
 
@@ -118,6 +134,18 @@ def get_active_users():
         SELECT user_id, subscription_end_date
         FROM telegram.users
         WHERE subscription_status = 'active';
+    """)
+    users = cursor.fetchall()
+    conn.close()
+    return users
+
+# Функция для получения всех активных пользователей
+def get_all_users():
+    conn = psycopg2.connect(**DB_CONFIG)
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT user_id, subscription_end_date
+        FROM telegram.users;
     """)
     users = cursor.fetchall()
     conn.close()
@@ -235,3 +263,24 @@ def update_subscription_with_promo(user_id, days_to_add):
         """, (new_end_date, user_id))
     conn.commit()
     conn.close()
+
+# Вызов группы по имени
+def get_chat_id_by_group_name(group_name):
+    conn = psycopg2.connect(**DB_CONFIG)
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT chat_id FROM telegram.groups WHERE group_name = %s;
+    """, (group_name,))
+    result = cursor.fetchone()
+    conn.close()
+    return result[0] if result else None
+
+def get_all_group():
+    conn = psycopg2.connect(**DB_CONFIG)
+    cursor = conn.cursor()
+    cursor.execute("""
+        SELECT chat_id FROM telegram.groups
+    """)
+    all_groups = [row[0] for row in cursor.fetchall()]
+    conn.close()
+    return all_groups
