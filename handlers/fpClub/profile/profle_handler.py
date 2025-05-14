@@ -13,9 +13,13 @@ async def handle_profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # Получаем информацию о профиле
     subscription_status, end_date, _ = get_subscription_status(user_id)
-    profile_info = f"Ваш профиль:\nПодписка: {subscription_status.capitalize()}"
+
+    profile_info = f"👋 Привет, {update.effective_user.first_name}!\n\nВот информация о твоём профиле:"
+
     if subscription_status == "active":
-        profile_info += f"\nДействует до: {end_date}"
+        profile_info += f"\n\n✅ Подписка: активна\n\n📅 Действует до: {end_date}"
+    else:
+        profile_info += "\n\n❌ Подписка: неактивна\n\n👉 Вы можете оформить подписку в разделе 'Купить подписку'"
 
     await query.edit_message_text(
         text=profile_info,

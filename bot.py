@@ -1,10 +1,14 @@
 import os
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
-from telegram.ext import ApplicationBuilder, MessageHandler, filters
+from telegram.ext import ApplicationBuilder, MessageHandler, filters, ChatMemberHandler, Updater
 from database import init_db
 from handlers.fpClub.coupon.coupon_handler import enter_promo_button_handler
 from handlers.fpClub.payment.choose_payment_handler import choose_payment
+from handlers.fpClub.profile.group.chat_member_handler import handle_chat_member_update
+from handlers.fpClub.profile.group.list_group_handler import list_group_handler
+from handlers.fpClub.profile.group.invite.generate_invite_handler import generate_invite_handler
 from handlers.fpClub.profile.profle_handler import profile_handler
+from handlers.help_handler import helper_handler
 
 # Хендлеры
 from handlers.start_handler import start_handler
@@ -31,8 +35,10 @@ if __name__ == '__main__':
     init_db()
 
     app = ApplicationBuilder().token(BOT_TOKEN).build()
-
+    # CommandHandler отправляются c слешем
     app.add_handler(start_handler)
+    app.add_handler(helper_handler)
+
     app.add_handler(academy_handler)
     app.add_handler(fp_club_handler)
     app.add_handler(program_of_streams_step1_handler)
@@ -40,14 +46,19 @@ if __name__ == '__main__':
     app.add_handler(program_of_streams_step3_handler)
     app.add_handler(program_of_streams_step4_handler)
     app.add_handler(check_transaction_button_handler)
-    # app.add_handler(transaction_input_handler)
     app.add_handler(enter_promo_button_handler)
-    # app.add_handler(promo_input_handler)
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
     app.add_handler(payment_handler)
     app.add_handler(choose_payment)
     app.add_handler(main_menu_handler)
     app.add_handler(profile_handler)
+
+
+    app.add_handler(generate_invite_handler)
+    app.add_handler(list_group_handler)
+
+    # Отслеживание плохишей, которые не купили подписку
+    app.add_handler(MessageHandler(filters.StatusUpdate.NEW_CHAT_MEMBERS, handle_chat_member_update))
 
     # Настройка шедулера
     scheduler = AsyncIOScheduler(timezone="Europe/Moscow")  # Указываем часовой пояс МСК
