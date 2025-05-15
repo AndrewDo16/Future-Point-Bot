@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import CallbackQueryHandler, ContextTypes
 
-from database import get_price
+from database import get_price_for_usdt
 from keyboards.payment_keyboard import get_payment_keyboard
 
 
@@ -14,7 +14,7 @@ async def handle_payment(update: Update, context: ContextTypes.DEFAULT_TYPE):
     value = int(value)  # Преобразуем значение в число
 
     # Вычисляем стоимость на основе переданного значения
-    base_price = get_price()  # Базовая стоимость (30 USDT)
+    base_price = get_price_for_usdt()  # Базовая стоимость в usdt, берем из базы
     total_price = base_price * value  # Умножаем базовую стоимость на значение
     total_days = value * 30 # Умножаем на 30, чтобы получить кол-во дней
 
