@@ -79,7 +79,9 @@ def init_db():
             code TEXT PRIMARY KEY,
             days INTEGER NOT NULL,
             used BOOLEAN DEFAULT FALSE,
-            used_by BIGINT
+            used_by BIGINT,
+            created_by VARCHAR,
+            create_stamp timestamp
             );
         """)
 
@@ -303,11 +305,11 @@ def get_all_group():
     conn.close()
     return all_groups
 
-def get_price():
+def get_price_for_usdt():
     conn = psycopg2.connect(**DB_CONFIG)
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT price FROM telegram.price
+        SELECT price FROM telegram.price WHERE currency = 'USDT'
     """)
     result = cursor.fetchone()
     conn.close()
