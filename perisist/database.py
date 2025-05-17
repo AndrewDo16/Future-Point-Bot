@@ -179,7 +179,7 @@ def init_db():
                            chain     VARCHAR(30)  NOT NULL
                        );
 
-                       INSERT INTO telegram.crypto_wallet
+                       INSERT INTO telegram.crypto_wallet (wallet, chain)
                        VALUES ('0x695bf46a362204B370e2914bbd5667068bE8f7d0', 'ВЕР20');
 
                        """)
