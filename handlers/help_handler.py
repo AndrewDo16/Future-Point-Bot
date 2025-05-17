@@ -1,10 +1,9 @@
 import logging
 
-from telegram import Update
+from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CommandHandler, ContextTypes
 
 from perisist.group.group_dao import get_all_group
-from keyboards.main_menu import get_main_menu
 
 
 async def helper(update: Update, context: ContextTypes.DEFAULT_TYPE):
@@ -20,9 +19,11 @@ async def helper(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = (
         f"Привет, {first_name}! 🌟\n"
         "Если у тебя возникли какие-либо вопросы или нужна помощь — "
-        "смело пиши [@Avgust52](https://t.me/Avgust52 ). Мы всегда на связи и готовы помочь!"
+        "смело пиши @Avgust52. Мы всегда на связи и готовы помочь!"
     )
-    keyboard = get_main_menu()
+    keyboard = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Главное меню", callback_data="main_menu")]
+    ])
 
     await update.message.reply_text(text, reply_markup=keyboard)
 

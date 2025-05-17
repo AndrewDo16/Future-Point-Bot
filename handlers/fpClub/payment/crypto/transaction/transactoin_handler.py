@@ -165,7 +165,7 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         if recipient.lower() != wallet:
             logger.error(f"Транзакция {tx_hash} проведена не на указанный кошелек {recipient}.")
             await update.message.reply_text(
-                "❌ Ошибка: Транзакция не соответствует требованиям. Указанный получатель не соответствует нашему кошельку. В случае возникновения вопросов обратитесь к [@Avgust52](https://t.me/Avgust52 ).",
+                "❌ Ошибка: Транзакция не соответствует требованиям. Указанный получатель не соответствует нашему кошельку. В случае возникновения вопросов обратитесь к @Avgust52.",
                 reply_markup=get_payment_error_keyboard(total_amount, total_days),
                 parse_mode='MarkdownV2'
             ),
@@ -175,7 +175,7 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         if amount_in_tokens < total_amount:
             logger.error(f"Транзакция {tx_hash} проведена на сумму {amount_in_tokens}.")
             await update.message.reply_text(
-                f"❌ Ошибка: Транзакция не соответствует требованиям. Переведенная сумма не соответствует тарифному плану. В рамках транзакции была переведена сумма {amount_in_tokens}. В случае возникновения вопросов обратитесь к [@Avgust52](https://t.me/Avgust52 ).",
+                f"❌ Ошибка: Транзакция не соответствует требованиям. Переведенная сумма не соответствует тарифному плану. В рамках транзакции была переведена сумма {amount_in_tokens}. В случае возникновения вопросов обратитесь к @Avgust52.",
                 reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
