@@ -3,7 +3,8 @@ import logging
 from telegram import Update
 from telegram.ext import CommandHandler, ContextTypes
 
-from database import add_user, get_all_group
+from perisist.users.users_dao import add_user
+from perisist.group.group_dao import get_all_group
 from keyboards.main_menu import get_main_menu
 from texts.intro_texts import WELCOME_TEXT
 

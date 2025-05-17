@@ -3,7 +3,8 @@ from datetime import datetime
 
 from telegram import Bot, InlineKeyboardMarkup, InlineKeyboardButton
 
-from database import update_subscription, get_active_users, get_all_group
+from perisist.users.users_dao import update_subscription, get_active_users
+from perisist.group.group_dao import get_all_group
 
 PAYMENT_BUTTON = InlineKeyboardMarkup([
                 [InlineKeyboardButton("Продлить", callback_data="choose_payment")]
