@@ -4,7 +4,7 @@ from telegram.ext import CallbackQueryHandler, ContextTypes
 from perisist.price.price_dao import get_price_for_usdt_by_period, get_total_day_for_usdt
 from keyboards.payment.choose_payment_keyboard import get_fp_club_choose_period_keyboard
 from keyboards.payment.crypto.payment_crypto_keyboard import get_crypto_payment_keyboard
-from perisist.transaction.wallet.crypto_wallet_dao import get_wallet_for_usdt
+from perisist.transaction.wallet.crypto_wallet_dao import get_primary_wallet
 
 CRYPTO_METHOD = "crypto"
 
@@ -38,7 +38,7 @@ async def handle_crypto_payment(update: Update, context: ContextTypes.DEFAULT_TY
     total_price = get_price_for_usdt_by_period(value)  # Cтоимость в usdt, берем из базы
     total_days = get_total_day_for_usdt(value) # кол-во дней подписки, берем из базы
 
-    wallet, chain = get_wallet_for_usdt()
+    wallet, chain = get_primary_wallet()
 
     # Формируем динамический текст с учетом стоимости
     payment_text = (

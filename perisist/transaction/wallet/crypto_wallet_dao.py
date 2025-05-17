@@ -1,11 +1,11 @@
 from perisist.database import get_connection
 
 
-def get_wallet_for_usdt():
+def get_primary_wallet():
     conn = get_connection()
     cursor = conn.cursor()
     cursor.execute("""
-        SELECT wallet, chain FROM telegram.crypto_wallet;
+        SELECT wallet, chain FROM telegram.crypto_wallet WHERE is_primary = true;
     """)
     result = cursor.fetchone()
     conn.close()

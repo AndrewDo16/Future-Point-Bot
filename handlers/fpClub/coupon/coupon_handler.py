@@ -14,7 +14,12 @@ async def handle_enter_promo_button(update: Update, context: ContextTypes.DEFAUL
     await query.answer()
 
     # Отправляем сообщение с запросом промокода
-    await query.edit_message_text("🎁 Введите промокод:")
+    await query.edit_message_text("🎁 Введите промокод:",
+                                  reply_markup=
+                                  InlineKeyboardMarkup([
+                                      [InlineKeyboardButton("Назад", callback_data="choose_payment")]
+                                  ])
+                                  )
 
     # Устанавливаем флаг, что мы ждём ввод промокода
     context.user_data["waiting_for_promo"] = True

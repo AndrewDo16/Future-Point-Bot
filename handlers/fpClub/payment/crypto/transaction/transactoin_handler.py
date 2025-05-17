@@ -4,6 +4,7 @@ from telegram.ext import ContextTypes, CallbackQueryHandler
 from web3 import Web3
 from perisist.transaction.transaction_dao import is_transaction_used, save_transaction
 from keyboards.payment.payment_error_keyboard import get_payment_error_keyboard
+from perisist.transaction.wallet.crypto_wallet_dao import get_primary_wallet
 from service.profile.update_subscription_service import update_subscription_service
 
 # Настройка логирования
@@ -74,7 +75,12 @@ async def handle_check_transaction_button(update: Update, context: ContextTypes.
     context.user_data["total_days"] = total_days
 
     # Отправляем сообщение с запросом хэша транзакции
-    await query.edit_message_text("Привет! Введи хэш транзакции на BSC, чтобы проверить оплату.")
+    await query.edit_message_text("Привет! Введи хэш транзакции на BSC, чтобы проверить оплату.",
+                                  reply_markup=
+                                  InlineKeyboardMarkup([
+                                      [InlineKeyboardButton("Назад", callback_data="choose_payment")]
+                                  ])
+                                  )
 
     # Устанавливаем флаг, что мы ждём ввод хэша
     context.user_data["waiting_for_tx"] = True
@@ -153,7 +159,10 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         logger.info(f"Расшифрованы данные транзакции: получатель={recipient}, сумма={amount_in_tokens}.")
 
         # Проверка адреса получателя и суммы
-        if recipient.lower() != TARGET_ADDRESS:
+
+        wallet, chain = get_primary_wallet()
+
+        if recipient.lower() != wallet:
             logger.error(f"Транзакция {tx_hash} проведена не на указанный кошелек {recipient}.")
             await update.message.reply_text(
                 "❌ Ошибка: Транзакция не соответствует требованиям. Указанный получатель не соответствует нашему кошельку. В случае возникновения вопросов обратитесь к НАМ (тут укажем почту или логин в тг)",
