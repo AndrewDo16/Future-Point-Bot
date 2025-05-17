@@ -1,6 +1,7 @@
 from telegram import Update, LabeledPrice, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import CallbackQueryHandler, ContextTypes, PreCheckoutQueryHandler, MessageHandler, filters
 
+from config.payment_config import PROVIDER_TOKEN
 from keyboards.payment.choose_payment_keyboard import get_fp_club_choose_period_keyboard
 from perisist.price.price_dao import get_price_for_rub_by_period, get_total_day_for_rub
 from perisist.transaction.transaction_dao import save_transaction
@@ -42,7 +43,7 @@ async def handle_card_payment(update: Update, context: ContextTypes.DEFAULT_TYPE
     title = "Подписка"
     description = f"Оплата подписки на {total_days} дней"
     payload = f"subscription:{total_month}:{total_days}:{total_price}"
-    provider_token = "381764678:TEST:124171"  # заменить на реальный токен
+    provider_token = PROVIDER_TOKEN # заменить на реальный токен
     currency = "RUB"
     start_parameter = "prod"
 
