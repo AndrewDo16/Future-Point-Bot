@@ -151,13 +151,13 @@ def init_db():
                            subscription_period_days INTEGER NOT NULL
                        );
 
-                       INSERT INTO telegram.price
+                       INSERT INTO telegram.price(price, currency, subscription_period, subscription_period_days)
                        VALUES (30, 'USDT', 1, 30);
-                       INSERT INTO telegram.price
+                       INSERT INTO telegram.price(price, currency, subscription_period, subscription_period_days)
                        VALUES (90, 'USDT', 3, 90);
-                       INSERT INTO telegram.price
+                       INSERT INTO telegram.price(price, currency, subscription_period, subscription_period_days)
                        VALUES (2500, 'RUB', 1, 30);
-                       INSERT INTO telegram.price
+                       INSERT INTO telegram.price(price, currency, subscription_period, subscription_period_days)
                        VALUES (7500, 'RUB', 3, 90);
                        """)
 
