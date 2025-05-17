@@ -1,6 +1,3 @@
-import psycopg2
-
-from config.database_config import DB_CONFIG
 from perisist.database import get_connection
 
 
