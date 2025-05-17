@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import CallbackQueryHandler, ContextTypes
 
-from database import get_subscription_status
+from perisist.users.users_dao import get_subscription_status
 from keyboards.fp_club import get_fp_club_keyboard
 from texts.fp_club_texts import FP_CLUB_TEXT
 
@@ -13,7 +13,7 @@ async def handle_fp_club(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = user.id
 
     # Проверяем статус подписки пользователя
-    subscription_status, end_date, _ = get_subscription_status(user_id)
+    subscription_status, end_date = get_subscription_status(user_id)
 
     if query.data == "fp_club":
         await query.edit_message_text(FP_CLUB_TEXT, reply_markup=get_fp_club_keyboard(subscription_status))

@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import CallbackQueryHandler, ContextTypes
 
-from database import get_subscription_status
+from perisist.users.users_dao import get_subscription_status
 from keyboards.fp_club_profile_keybord import get_profile_keyboard
 
 
@@ -12,7 +12,7 @@ async def handle_profile(update: Update, context: ContextTypes.DEFAULT_TYPE):
     user_id = user.id
 
     # Получаем информацию о профиле
-    subscription_status, end_date, _ = get_subscription_status(user_id)
+    subscription_status, end_date = get_subscription_status(user_id)
 
     profile_info = f"👋 Привет, {update.effective_user.first_name}!\n\nВот информация о твоём профиле:"
 

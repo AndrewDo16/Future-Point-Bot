@@ -1,9 +1,10 @@
 import logging
 
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import ContextTypes, MessageHandler, filters, CallbackQueryHandler
+from telegram.ext import ContextTypes, CallbackQueryHandler
 
-from database import check_promo_code, mark_promo_code_as_used, update_subscription_with_promo, get_subscription_status
+from perisist.promo.promo_code_dao import check_promo_code, mark_promo_code_as_used
+from perisist.users.users_dao import update_subscription_with_promo, get_subscription_status
 
 logger = logging.getLogger(__name__)
 
@@ -64,7 +65,7 @@ async def handle_promo_input(update: Update, context: ContextTypes.DEFAULT_TYPE)
         update_subscription_with_promo(user_id, days_to_add)
 
         # Получаем новую дату окончания подписки
-        _, subscription_end_date, _ = get_subscription_status(user_id)
+        _, subscription_end_date = get_subscription_status(user_id)
 
         await update.message.reply_text(
             f"🎉 Промокод активирован!\n"

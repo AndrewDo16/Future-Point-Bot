@@ -2,9 +2,9 @@ import logging
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes, CallbackQueryHandler
 from web3 import Web3
-from datetime import datetime, timedelta
-from database import update_subscription, is_transaction_used, save_transaction, get_subscription_status
+from perisist.transaction.transaction_dao import is_transaction_used, save_transaction
 from keyboards.payment.payment_error_keyboard import get_payment_error_keyboard
+from service.profile.update_subscription_service import update_subscription_service
 
 # Настройка логирования
 logging.basicConfig(
@@ -167,20 +167,8 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
                 reply_markup=get_payment_error_keyboard(total_amount, total_days))
             return
 
-        # Получаем текущий статус подписки и дату окончания
-        subscription_status, subscription_end_date, _ = get_subscription_status(user.id)
-
-        # Рассчитываем новую дату окончания подписки
-        if subscription_status == "active" and subscription_end_date:
-            # Если подписка активна, добавляем 30 дней к текущей дате окончания
-            current_end_date = datetime.strptime(subscription_end_date, "%Y-%m-%d")
-            new_end_date = (current_end_date + timedelta(days=total_days)).strftime("%Y-%m-%d")
-        else:
-            # Если подписка неактивна, устанавливаем новую дату от текущего момента
-            new_end_date = (datetime.now() + timedelta(days=total_days)).strftime("%Y-%m-%d")
-
-        # Обновляем статус подписки
-        update_subscription(user.id, "active", new_end_date)
+        # Обновляем подписку у юзера
+        new_end_date = update_subscription_service(total_days, user.id)
 
         reply = (
             f"📥 Пополнение обнаружено!\n"
@@ -191,7 +179,7 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
         )
 
         # Сохраняем успешную транзакцию в базу данных
-        save_transaction(tx_hash, user.id)
+        save_transaction(tx_hash, amount_in_tokens, "USDT", user.id)
 
         await update.message.reply_text(reply, parse_mode="Markdown", reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton("Мой профиль", callback_data="main_profile")]])

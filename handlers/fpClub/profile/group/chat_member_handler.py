@@ -3,7 +3,7 @@ import logging
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import ContextTypes
 
-from database import get_subscription_status
+from perisist.users.users_dao import get_subscription_status
 
 logger = logging.getLogger(__name__)
 

@@ -1,7 +1,7 @@
 from telegram import Update
 from telegram.ext import CallbackQueryHandler, ContextTypes
 
-from database import get_subscription_status
+from perisist.users.users_dao import get_subscription_status
 from keyboards.program_of_streams_handler import get_program_menu
 from texts.fp_club_program_texts import PROGRAM_OF_STREAMS_TEXT, PROGRAM_OF_STREAMS_END_TEXT, BLOCK_TEXTS
 
@@ -15,7 +15,7 @@ async def handle_program_of_streams_step4(update: Update, context: ContextTypes.
     user_id = user.id
 
     # Проверяем статус подписки пользователя
-    subscription_status, end_date, _ = get_subscription_status(user_id)
+    subscription_status, end_date = get_subscription_status(user_id)
 
     # Отправляем сообщение с блоком 1
 

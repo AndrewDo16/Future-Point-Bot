@@ -4,7 +4,7 @@ from telegram import Update
 from telegram.ext import ContextTypes
 
 from handlers.fpClub.coupon.coupon_handler import handle_promo_input
-from handlers.fpClub.transaction.transactoin_handler import handle_transaction_input
+from handlers.fpClub.payment.crypto.transaction.transactoin_handler import handle_transaction_input
 
 logger = logging.getLogger(__name__)
 

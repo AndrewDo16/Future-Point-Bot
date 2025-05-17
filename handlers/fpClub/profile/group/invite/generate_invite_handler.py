@@ -1,7 +1,7 @@
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ContextTypes, CallbackQueryHandler
 
-from database import get_chat_id_by_group_name
+from perisist.group.group_dao import get_chat_id_by_group_name
 
 
 async def generate_invite(update: Update, context: ContextTypes.DEFAULT_TYPE):
