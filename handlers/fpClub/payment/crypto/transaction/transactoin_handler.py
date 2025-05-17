@@ -162,10 +162,14 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
 
         wallet, chain = get_primary_wallet()
 
-        if recipient.lower() != wallet:
+        if recipient != wallet:
             logger.error(f"Транзакция {tx_hash} проведена не на указанный кошелек {recipient}.")
+            message = "❌ Ошибка: Транзакция не соответствует требованиям\\. " \
+                      "Указанный получатель не соответствует нашему кошельку\\. \n" \
+                      "В случае возникновения вопросов обратитесь к [@Avgust52](https://t.me/Avgust52 )\\."
+
             await update.message.reply_text(
-                "❌ Ошибка: Транзакция не соответствует требованиям. Указанный получатель не соответствует нашему кошельку. В случае возникновения вопросов обратитесь к @Avgust52.",
+                message,
                 reply_markup=get_payment_error_keyboard(total_amount, total_days),
                 parse_mode='MarkdownV2'
             ),
@@ -174,9 +178,18 @@ async def handle_transaction_input(update: Update, context: ContextTypes.DEFAULT
 
         if amount_in_tokens < total_amount:
             logger.error(f"Транзакция {tx_hash} проведена на сумму {amount_in_tokens}.")
+            message = (
+                "❌ Ошибка: Транзакция не соответствует требованиям\\. "
+                "Переведенная сумма не соответствует тарифному плану\\. "
+                f"В рамках транзакции была переведена сумма {amount_in_tokens}\\. \n"
+                "В случае возникновения вопросов обратитесь к [@Avgust52](https://t.me/Avgust52 )\\."
+            )
+
             await update.message.reply_text(
-                f"❌ Ошибка: Транзакция не соответствует требованиям. Переведенная сумма не соответствует тарифному плану. В рамках транзакции была переведена сумма {amount_in_tokens}. В случае возникновения вопросов обратитесь к @Avgust52.",
-                reply_markup=get_payment_error_keyboard(total_amount, total_days))
+                message,
+                reply_markup=get_payment_error_keyboard(total_amount, total_days),
+                parse_mode='MarkdownV2'
+            )
             return
 
         # Обновляем подписку у юзера

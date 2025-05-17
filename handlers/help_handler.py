@@ -17,14 +17,19 @@ async def helper(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     first_name = update.effective_user.first_name
     text = (
-        f"Привет, {first_name}! 🌟\n"
-        "Если у тебя возникли какие-либо вопросы или нужна помощь — "
-        "смело пиши @Avgust52. Мы всегда на связи и готовы помочь!"
+        "Привет, {first_name}\\! 🌟\n"
+        "Если у тебя возникли какие\\-либо вопросы или нужна помощь — "
+        "смело пиши [@Avgust52](https://t.me/Avgust52 )\\. Мы всегда на связи и готовы помочь\\!"
     )
+
     keyboard = InlineKeyboardMarkup([
         [InlineKeyboardButton("Главное меню", callback_data="main_menu")]
     ])
 
-    await update.message.reply_text(text, reply_markup=keyboard)
+    await update.message.reply_text(
+        text.format(first_name=first_name),
+        reply_markup=keyboard,
+        parse_mode='MarkdownV2'
+    )
 
 helper_handler = CommandHandler("help", helper)
